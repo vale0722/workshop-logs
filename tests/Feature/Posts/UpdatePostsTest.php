@@ -3,6 +3,7 @@
 namespace Tests\Feature\Posts;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -17,7 +18,7 @@ class UpdatePostsTest extends TestCase
             'content' => 'Content test',
         ];
         $post = Post::factory()->create();
-        $response = $this->patch(route('posts.update', $post), $data);
+        $response = $this->actingAs(User::factory()->create())->patch(route('admin.posts.update', $post), $data);
         $response->assertRedirect();
 
         $post = $post->refresh();

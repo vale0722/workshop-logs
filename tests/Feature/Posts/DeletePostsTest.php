@@ -3,6 +3,7 @@
 namespace Tests\Feature\Posts;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -13,7 +14,7 @@ class DeletePostsTest extends TestCase
     public function testYouCanDeleteAPost()
     {
         $post = Post::factory()->create();
-        $response = $this->delete(route('posts.destroy', $post));
+        $response = $this->actingAs(User::factory()->create())->delete(route('admin.posts.destroy', $post));
 
         $response->assertRedirect();
         $this->assertEmpty($post->fresh());

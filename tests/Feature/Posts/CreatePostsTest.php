@@ -3,6 +3,7 @@
 namespace Tests\Feature\Posts;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -12,9 +13,9 @@ class CreatePostsTest extends TestCase
 
     public function testYouCanSeeCreatePostForm()
     {
-        $response = $this->get(route('posts.create'));
+        $response = $this->actingAs(User::factory()->create())->get(route('admin.posts.create'));
 
         $response->assertOk();
-        $response->assertViewIs('posts.create');
+        $response->assertViewIs('admin.posts.create');
     }
 }
