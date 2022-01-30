@@ -1,6 +1,6 @@
 # Logs in Laravel
 
-This project is done in a workshop, in order to talk about managing logs with Laravel. It is a product management system, where an admin user can control and manage what happens in the application.
+This project is done in a workshop, in order to talk about managing logs with Laravel. It is a post management system, where an admin user can control and manage what happens in the application.
 
 ## Installation
 

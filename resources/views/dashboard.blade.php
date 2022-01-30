@@ -1,17 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ trans('dashboard.title') }}
-        </h2>
+        {{ trans('dashboard.title') }}
     </x-slot>
+            <section class="bg-white p-6 rounded">
+                <div class="max-w-2xl px-6 text-center mx-auto">
+                    <h2 class="text-3xl font-semibold text-gray-800">Hola, <span class="bg-purple-600 text-white rounded px-1">Soy Valeria</span></h2>
+                    <p class="text-gray-600 mt-4">En este workshop veremos como funciona el sistema de logs y como conectarnos con Sentry. Sentry proporciona un rastreador de errores de código abierto para supervisar y responder a errores y fallas en cualquier lugar de tu aplicación en tiempo real.</p>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+                    <div class="flex items-end justify-center mt-16">
+                        <x-icon-welcome_person></x-icon-welcome_person>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </section>
 </x-app-layout>
