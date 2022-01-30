@@ -2,9 +2,11 @@
 
 namespace Tests\Feature\Posts;
 
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use League\Flysystem\Config;
+use Monolog\Handler\TestHandler;
+use Monolog\Logger;
 use Tests\TestCase;
 
 class CreatePostsTest extends TestCase
@@ -17,5 +19,22 @@ class CreatePostsTest extends TestCase
 
         $response->assertOk();
         $response->assertViewIs('admin.posts.create');
+    }
+
+    public function testYouCanSeeCreatePostFormAndSeeLog()
+    {
+        $monolog = new Logger('test');
+        $monolog->pushHandler(new TestHandler());
+        config([
+            'default' => 'test',
+            'logging.channels' => [
+                'test' => [
+                    'driver' => 'custom',
+                    'via' => $monolog
+                ],
+            ],
+        ]);
+
+        $this->testYouCanSeeCreatePostForm();
     }
 }
