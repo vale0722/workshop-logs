@@ -5,6 +5,6 @@ return [
     'messages' => [
         'created' => 'Se ha creado un :model',
         'updated' => 'Se ha actualizado un :model',
-        'deleted' => 'Se ha eliminado un :model'
-    ]
+        'deleted' => 'Se ha eliminado un :model',
+    ],
 ];
