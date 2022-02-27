@@ -3,7 +3,6 @@
 namespace App\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Post;
 
 abstract class Action
 {
