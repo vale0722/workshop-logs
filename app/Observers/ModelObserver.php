@@ -26,7 +26,7 @@ class ModelObserver
     {
         return [
             'model_id' => $model->getKey(),
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
         ];
     }
 

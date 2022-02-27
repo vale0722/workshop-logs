@@ -12,7 +12,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->title(),
             'content' => $this->faker->text(),
-            'user_id' => User::factory()->create()
+            'user_id' => User::factory()->create(),
         ];
     }
 }

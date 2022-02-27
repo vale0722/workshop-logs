@@ -16,7 +16,7 @@ class IndexPostsTest extends TestCase
         $user = User::factory()->create();
         Post::factory()->count(2)->create(
             [
-                'user_id' => $user->getKey()
+                'user_id' => $user->getKey(),
             ]
         );
         $response = $this->actingAs($user)->get(route('admin.posts.index'));

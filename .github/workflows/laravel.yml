@@ -32,4 +32,6 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: composer test
+      run: composer test-ci
+    - name: Excecute phpcs
+      run: composer phpcs_validate
