@@ -18,6 +18,12 @@
                     <x-nav-link :href="route('admin.posts.index')" :active="request()->routeIs('admin.posts.index')">
                         {{ trans('posts.title') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.externals.index', 'rick-and-morty')" :active="request()->routeIs('admin.externals.index', 'rick-and-morty')">
+                        Rick and Morty
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.externals.index', 'marvel')" :active="request()->routeIs('admin.externals.index', 'marvel')">
+                        Marvel
+                    </x-nav-link>
                 </div>
             </div>
 
